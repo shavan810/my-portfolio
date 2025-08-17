@@ -1,69 +1,50 @@
-// src/components/Navbar.jsx
 import { useState } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
-  const navLinks = [
-    { name: "Home", link: "#home" },
-    { name: "About", link: "#about" },
-    { name: "Skills", link: "#skills" },
-    { name: "Projects", link: "#projects" },
-    { name: "Contact", link: "#contact" },
-  ];
+  const handleLinkClick = () => setOpen(false);
 
   return (
     <nav className="fixed top-0 left-0 w-full h-16 bg-gray-900 text-white shadow-md z-50">
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 py-4">
+      <div className="max-w-7xl mx-auto px-6 flex items-center h-full relative">
         
-        {/* Logo */}
-        <h1 className="text-xl sm:text-2xl font-bold text-teal-400 tracking-wide">
+        {/* Logo (Left) */}
+        <h1 className="text-xl font-bold text-teal-400 cursor-pointer">
           MyPortfolio
         </h1>
 
-        {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-6 lg:gap-8 text-base lg:text-lg">
-          {navLinks.map((nav, i) => (
-            <li key={i}>
-              <a
-                href={nav.link}
-                className="relative group"
-              >
-                {nav.name}
-                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-teal-400 transition-all duration-300 group-hover:w-full"></span>
-              </a>
-            </li>
-          ))}
+        {/* Desktop Menu (Right) */}
+        <ul className="hidden md:flex space-x-8 ml-auto">
+          <li><a href="#home" className="hover:text-teal-400 transition">Home</a></li>
+          <li><a href="#projects" className="hover:text-teal-400 transition">Projects</a></li>
+          <li><a href="#about" className="hover:text-teal-400 transition">About</a></li>
+          <li><a href="#skills" className="hover:text-teal-400 transition">Skills</a></li>
+          <li><a href="#contact" className="hover:text-teal-400 transition">Contact</a></li>
         </ul>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Hamburger Button (Center) */}
         <button
+          className="md:hidden text-4xl w-[100px] focus:outline-none absolute left-1/2 transform -translate-x-1/2"
           onClick={() => setOpen(!open)}
-          className="md:hidden text-2xl focus:outline-none"
         >
-          {open ? <FiX /> : <FiMenu />}
+          {open ? <FaTimes /> : <FaBars />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Dropdown Menu */}
       <div
-        className={`md:hidden bg-gray-800 transition-all duration-300 overflow-hidden ${
-          open ? "max-h-96" : "max-h-0"
+        className={`md:hidden bg-gray-900/95 backdrop-blur-sm transition-all duration-500 ease-in-out overflow-hidden w-full ${
+          open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <ul className="flex flex-col items-center gap-6 py-4">
-          {navLinks.map((nav, i) => (
-            <li key={i}>
-              <a
-                href={nav.link}
-                className="text-base sm:text-lg hover:text-teal-400 transition-colors"
-                onClick={() => setOpen(false)} // close menu on click
-              >
-                {nav.name}
-              </a>
-            </li>
-          ))}
+        <ul className="flex flex-col items-center text-center py-4 space-y-4">
+          <li><a href="#home" onClick={handleLinkClick} className="hover:text-teal-400 text-lg">Home</a></li>
+          <li><a href="#projects" onClick={handleLinkClick} className="hover:text-teal-400 text-lg">Projects</a></li>
+          <li><a href="#about" onClick={handleLinkClick} className="hover:text-teal-400 text-lg">About</a></li>
+          <li><a href="#skills" onClick={handleLinkClick} className="hover:text-teal-400 text-lg">Skills</a></li>
+          <li><a href="#contact" onClick={handleLinkClick} className="hover:text-teal-400 text-lg">Contact</a></li>
         </ul>
       </div>
     </nav>
