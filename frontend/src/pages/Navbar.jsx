@@ -26,7 +26,7 @@ export default function Navbar() {
 
         {/* Mobile Hamburger Button (Center) */}
         <button
-          className="md:hidden text-2xl w-[180px] focus:outline-none absolute left-1/2 transform -translate-x-1/2"
+          className="md:hidden text-2xl w-[150px] focus:outline-none absolute left-1/2 transform -translate-x-1/2"
           onClick={() => setOpen(!open)}
         >
           {open ? <FaTimes /> : <FaBars />}
