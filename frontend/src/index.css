@@ -1,4 +1,5 @@
 @import "tailwindcss";
+
 @keyframes gradient-flow {
   0% {
     background-position: 0% 50%;
@@ -14,4 +15,9 @@
 .animate-gradient-flow {
   background-size: 200% 200%;
   animation: gradient-flow 8s ease infinite;
+}
+/* Prevent horizontal scroll */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
 }

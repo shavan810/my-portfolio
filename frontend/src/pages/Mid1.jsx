@@ -2,8 +2,6 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import logos from "../../public/images/logos.png";
-
-// Import social icons
 import { FaInstagram, FaFacebook, FaLinkedin, FaGithub } from "react-icons/fa";
 
 export default function Mid1() {
@@ -14,13 +12,14 @@ export default function Mid1() {
   return (
     <section
       id="home"
-      className="pt-20 pb-12 px-4  md:px-12 lg:px-20 
+      className="pt-20 pb-12 px-4 sm:px-8 md:px-12 lg:px-20 
              bg-gradient-to-r from-black via-slate-700 to-purple-800 
              animate-gradient-flow
              min-h-screen flex items-center"
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center text-center md:text-left">
-        
+      {/* <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center text-center md:text-left"> */}
+        <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center text-center md:text-left">
+
         {/* Left Content */}
         <div data-aos="fade-right">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-300 leading-tight">
@@ -32,62 +31,41 @@ export default function Mid1() {
             <span className="font-semibold text-red-500 text-lg sm:text-xl md:text-2xl">
               Full-Stack Developer{" "}
             </span>
-            crafting modern and scalable web applications. I love turning ideas
-            into reality using clean and efficient code.
+            crafting modern and scalable web applications.
           </p>
 
           {/* Buttons */}
           <div className="mt-6 flex flex-col sm:flex-row justify-center md:justify-start gap-4">
             <a
               href="#projects"
-              className="px-6 py-3 bg-teal-500 text-white rounded-lg shadow-md hover:bg-teal-600 transition w-full sm:w-auto"
+              className="px-6 py-3 bg-teal-500 text-white rounded-lg shadow-md hover:bg-teal-600 transition w-full sm:w-auto text-center"
             >
               View My Work
             </a>
             <a
               href="#contact"
-              className="px-6 py-3 border border-teal-500 text-teal-500 rounded-lg hover:bg-teal-500 hover:text-white transition w-full sm:w-auto"
+              className="px-6 py-3 border border-teal-500 text-teal-500 rounded-lg hover:bg-teal-500 hover:text-white transition w-full sm:w-auto text-center"
             >
               Contact Me
             </a>
           </div>
 
-          {/* Social Media Buttons */}
+          {/* Socials */}
           <div className="mt-8 flex justify-center md:justify-start gap-5 flex-wrap">
-            {/* Instagram */}
-            <a
-              href="https://www.instagram.com/itz_me_sa1/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 text-white text-2xl hover:scale-110 transition-transform shadow-lg"
-            >
+            <a href="https://www.instagram.com/itz_me_sa1/" target="_blank" rel="noreferrer"
+              className="p-3 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 text-white text-2xl hover:scale-110 transition-transform shadow-lg">
               <FaInstagram />
             </a>
-            {/* Facebook */}
-            <a
-              href="https://www.facebook.com/shavan.singh.197977/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-full bg-blue-600 text-white text-2xl hover:scale-110 transition-transform shadow-lg"
-            >
+            <a href="https://www.facebook.com/shavan.singh.197977/" target="_blank" rel="noreferrer"
+              className="p-3 rounded-full bg-blue-600 text-white text-2xl hover:scale-110 transition-transform shadow-lg">
               <FaFacebook />
             </a>
-            {/* LinkedIn */}
-            <a
-              href="https://linkedin.com/in/shavan-singh-95b703322"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-full bg-blue-500 text-white text-2xl hover:scale-110 transition-transform shadow-lg"
-            >
+            <a href="https://linkedin.com/in/shavan-singh-95b703322" target="_blank" rel="noreferrer"
+              className="p-3 rounded-full bg-blue-500 text-white text-2xl hover:scale-110 transition-transform shadow-lg">
               <FaLinkedin />
             </a>
-            {/* GitHub */}
-            <a
-              href="https://github.com/shavan810"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-full bg-gray-800 text-white text-2xl hover:scale-110 transition-transform shadow-lg"
-            >
+            <a href="https://github.com/shavan810" target="_blank" rel="noreferrer"
+              className="p-3 rounded-full bg-gray-800 text-white text-2xl hover:scale-110 transition-transform shadow-lg">
               <FaGithub />
             </a>
           </div>
