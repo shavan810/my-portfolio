@@ -27,10 +27,10 @@ export default function Projects() {
   color: "bg-gradient-to-r from-blue-500 to-purple-500",
 },
 {
-  title: "Swiggy Clone",
-  desc: "A React-based food delivery web app clone of Swiggy with restaurant listings, ordering, and cart management features.",
+  title: "Shavan-Mart",
+  desc: "A React-based grocery & e-commerce web app clone of amazon with various functionality, and cart management features.",
   img: "YOUR_PROJECT_IMAGE3.png",
-  link: "https://github.com/shavan810/my-swigy-clone",
+  link: "https://shavan-mart-01.vercel.app/",
   tech: [
     <SiReact className="text-blue-400" />
   ],
